@@ -8,6 +8,7 @@ const useGenerator = () => {
     const [loading, setLoading] = useState(false);
     
     const generateCode = (url) => {
+      setCode({ success: null, content: '' });
       if (url?.length > 0) {
         setLoading(true);
         fetch(`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${url}`)
@@ -20,7 +21,7 @@ const useGenerator = () => {
           .catch(error => console.log('Error fetching data: ', error))
         setInput('');
       } else {
-        setCode({ success: false, content: 'Please input valid url' })
+        setCode({ success: false, content: 'Please input a valid url' })
       }
     };
 
