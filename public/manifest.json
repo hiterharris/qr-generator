@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "QR Generator",
+  "name": "Generate a QR code from url",
   "icons": [
     {
       "src": "favicon.ico",
