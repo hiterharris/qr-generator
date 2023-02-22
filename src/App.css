@@ -13,31 +13,45 @@ form {
   align-items: center;
 }
 
-input {
-  width: 300px;
-  font-size: 18px;
-  border-radius: 24px;
-  padding: 8px 12px;
-  border: 1px solid lightgrey;
-}
-
 button {
-  height: 42px;
-  width: 200px;
+  height: 50px;
+  width: 20%;
   margin: 24px;
   background-color: #356FFF;
   border: none;
-  border-radius: 6px;
+  border-radius: 16px;
   font-family: 'Avenir';
-  font-size: 18px;
+  font-size: 24px;
   color: white;
-  font-weight: 700;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.code-container {
+input {
+  width: 80%;
+  padding: 0 16px;
+  font-size: 28px;
+  border: none;
+  text-align: center;
+}
+
+.generate-button {
+  height: 50px;
+  width: 60%;
+  margin: 24px;
+  background-color: #356FFF;
+  border: none;
+  border-radius: 16px;
+  font-family: 'Avenir';
+  font-size: 22px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.Code {
   height: 150px;
   width: 150px;
-  padding-top: 64px;
   cursor: pointer;
 }
 
@@ -53,9 +67,13 @@ button {
 
 }
 
+.copy {
+  color: gray;
+  margin: 8px;
+}
+
 .check {
   color: green;
   height: 24px;
   width: 24px;
-  padding-left: 8px;
 }
