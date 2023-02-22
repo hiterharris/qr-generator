@@ -1,16 +1,16 @@
 import useGenerator from './hooks/useGenerator';
-import Input from './components/Input';
-import Code from './components/Code';
+import { Input, Code } from './components';
 import './App.css';
 
 function App() {
-  const { input, setInput, code, copied, setCopied, generateCode, copyCode } = useGenerator();
+  const { input, setInput, code, copied, setCopied, generateCode, copyCode, loading } = useGenerator();
   return (
     <div className="App">
       <Input
         input={input}
         setInput={setInput}
         generateCode={generateCode}
+        loading={loading}
       />
       <Code
         code={code}

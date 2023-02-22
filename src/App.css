@@ -1,30 +1,18 @@
 .App {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100vh;
 }
 
+
+/* ----- input form ----- */
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-button {
-  height: 50px;
-  width: 20%;
-  margin: 24px;
-  background-color: #356FFF;
-  border: none;
-  border-radius: 16px;
-  font-family: 'Avenir';
-  font-size: 24px;
-  color: white;
-  font-weight: 500;
-  cursor: pointer;
 }
 
 input {
@@ -43,13 +31,15 @@ input {
   border: none;
   border-radius: 16px;
   font-family: 'Avenir';
-  font-size: 22px;
+  font-size: 20px;
   color: white;
   font-weight: 500;
   cursor: pointer;
 }
 
-.Code {
+
+/* ----- qr code ----- */
+.qr-code {
   height: 150px;
   width: 150px;
   cursor: pointer;
@@ -59,21 +49,98 @@ input {
   visibility: hidden;
 }
 
-.code-container p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-
-}
-
 .copy {
-  color: gray;
-  margin: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.check {
-  color: green;
+.copy-icon {
   height: 24px;
-  width: 24px;
+  padding-left: 8px;
+}
+
+.error {
+  color: red;
+}
+
+
+ /* ----- loader ----- */
+ .loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 32px;
+ }
+
+ .dot-pulse {
+  position: relative;
+  right: 10000px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #356FFF;
+  color: #356FFF;
+  box-shadow: 9999px 0 0 -5px;
+  animation: dot-pulse 1.5s infinite linear;
+  animation-delay: 0.25s;
+}
+
+.dot-pulse::before, .dot-pulse::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #356FFF;
+  color: #356FFF;
+}
+
+.dot-pulse::before {
+  box-shadow: 9984px 0 0 -5px;
+  animation: dot-pulse-before 1.5s infinite linear;
+  animation-delay: 0s;
+}
+
+.dot-pulse::after {
+  box-shadow: 10014px 0 0 -5px;
+  animation: dot-pulse-after 1.5s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes dot-pulse-before {
+  0% {
+    box-shadow: 9984px 0 0 -5px;
+  }
+  30% {
+    box-shadow: 9984px 0 0 2px;
+  }
+  60%, 100% {
+    box-shadow: 9984px 0 0 -5px;
+  }
+}
+@keyframes dot-pulse {
+  0% {
+    box-shadow: 9999px 0 0 -5px;
+  }
+  30% {
+    box-shadow: 9999px 0 0 2px;
+  }
+  60%, 100% {
+    box-shadow: 9999px 0 0 -5px;
+  }
+}
+@keyframes dot-pulse-after {
+  0% {
+    box-shadow: 10014px 0 0 -5px;
+  }
+  30% {
+    box-shadow: 10014px 0 0 2px;
+  }
+  60%, 100% {
+    box-shadow: 10014px 0 0 -5px;
+  }
 }

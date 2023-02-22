@@ -1,17 +1,20 @@
-import { FaCheckCircle } from 'react-icons/fa';
+import { copyIcon, copiedIcon } from '../assets';
 import '../App.css';
 
 const Code = (props) => {
   const { code, copyCode, copied, setCopied } = props;
   return (
-    <div className={`Code ${!code && 'hide'}`} onClick={() => { copyCode(code); setCopied(true) }}>
-      {code && (
-        <>
-          <img src={code} alt='qr code' />
-          <p className="copy">{!copied ? 'Copy' : <FaCheckCircle className='check'/>}</p>
-        </>
-      )}
-    </div>
+    code?.success ? (
+      <div className={`qr-code ${code?.success == null && 'hide'}`} onClick={() => { copyCode(code?.content); setCopied(true) }}>
+        <img src={code?.content} alt='qr code' />
+        <div className="copy">
+          <p>{copied ? 'Copied' : 'Copy'}</p>
+          <img className="copy-icon" src={copied ? copiedIcon : copyIcon} alt="copy-icon" />
+        </div>
+      </div>
+    ) : (
+      <p className="error">{!code?.success && code?.content}</p>
+    )
   );
 }
 
